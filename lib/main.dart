@@ -2,14 +2,22 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:testflutter/screens/main_screen.dart';
 import 'package:testflutter/screens/on_boarding_screen.dart';
 
-void main() {
+void main() async{
+  await GetStorage.init();
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(
+      primarySwatch: Colors.deepOrange
+    ),
     initialRoute: SplashScreen.id,
     routes: {
       SplashScreen.id:(context)=> const SplashScreen(),
-      OnBoardingScreen.id:(context)=> const OnBoardingScreen()
+      OnBoardingScreen.id:(context)=> const OnBoardingScreen(),
+      MainScreen.id:(context)=> const MainScreen(),
     },
 
   ));
@@ -27,24 +35,41 @@ class SplashScreen extends StatefulWidget {
 
 
 class _SplashScreenState extends State<SplashScreen> {
+  final store = GetStorage();
   
   @override
   void initState() {
     Timer(const Duration(
       seconds: 3
-    ), ()=>Navigator.pushReplacementNamed(context, OnBoardingScreen.id),);
+    ), (){
+      bool? boarding = store.read('onboard');
+      boarding == null ?Navigator.pushReplacementNamed(context, OnBoardingScreen.id):
+      boarding == true?Navigator.pushReplacementNamed(context, MainScreen.id):
+      Navigator.pushReplacementNamed(context, OnBoardingScreen.id);
+
+    }
+    );
     super.initState();
   }
   
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge,overlays: []);
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text("Shop App Splash.", style:
-          TextStyle(
-            fontFamily: 'Eagle'
-          )),
+        child: SizedBox(
+          height: 200,
+          width: 200,
+          child: Column(
+            children: [
+              Image.asset('assets/images/logo.png'),
+              const Text('Shop App', style: TextStyle(
+                fontFamily: 'Eagle',
+                fontSize: 20
+              ),)
+            ],
+          ),
+        )
       ),
     );
   }
