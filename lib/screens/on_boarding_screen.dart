@@ -40,17 +40,18 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 boardColumn: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Text("SHOP",
+                    const Text("Buy Anything You Want",
                       textAlign: TextAlign.center,
                       style: TextStyle(
+                        color: Colors.white70,
                           fontSize: 30,
-                          fontFamily: 'Eagle'
+                          fontFamily: 'Poppins',
 
                       ),),
                     SizedBox(
-                        height: 300,
-                        width: 300,
-                        child: Image.asset('assets/images/logo.png')
+                        height: 400,
+                        width: 400,
+                        child: Image.asset('assets/images/1.png')
                     )
                   ],
                 ),
@@ -59,17 +60,78 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 boardColumn: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Text("SHOP",
+                    const Text("Get Your Discount",
                       textAlign: TextAlign.center,
                       style: TextStyle(
+                        color: Colors.white70,
                           fontSize: 30,
-                          fontFamily: 'Eagle'
+                          fontFamily: 'Poppins'
 
                       ),),
                     SizedBox(
-                        height: 300,
-                        width: 300,
-                        child: Image.asset('assets/images/1.png')
+                        height: 400,
+                        width: 400,
+                        child: Image.asset('assets/images/2.png',)
+                    )
+                  ],
+                ),
+              ),
+              OnBoardPage(
+                boardColumn: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Text("Delivery to your home",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 30,
+                          fontFamily: 'Poppins'
+
+                      ),),
+                    SizedBox(
+                        height: 400,
+                        width: 400,
+                        child: Image.asset('assets/images/3.png',)
+                    )
+                  ],
+                ),
+              ),
+              OnBoardPage(
+                boardColumn: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Text("Fast Delivery",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 30,
+                          fontFamily: 'Poppins'
+
+                      ),),
+                    SizedBox(
+                        height: 400,
+                        width: 400,
+                        child: Image.asset('assets/images/4.png',)
+                    )
+                  ],
+                ),
+              ),
+              OnBoardPage(
+                boardColumn: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Text("Thousand of offers",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 30,
+                          fontFamily: 'Poppins'
+
+                      ),),
+                    SizedBox(
+                        height: 400,
+                        width: 400,
+                        child: Image.asset('assets/images/5.png',)
                     )
                   ],
                 ),
@@ -81,7 +143,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: SizedBox(
-              height:89,
+              height:119,
               child: Column(
                 children: [
 
@@ -106,7 +168,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     },
                   ),
 
-                  const SizedBox(height: 20,)
+                  const SizedBox(height: 40,)
                 ],
               ),
             )
@@ -135,7 +197,7 @@ class OnBoardPage extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: 100,
+            height: 130,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(50), topRight: Radius.circular(50)

@@ -34,24 +34,13 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        title: const Text("Shop App", style: TextStyle(
-          fontFamily: 'Eagle',
-        ),),
-        actions: [
-          IconButton(
-              onPressed: (){
-
-              },
-              icon: const Icon(Icons.shopping_cart_outlined))
-        ],
-      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedLabelStyle: const TextStyle(
+          fontFamily: 'Poppins'
+        ),
         elevation: 4,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
